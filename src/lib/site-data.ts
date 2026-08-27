@@ -56,7 +56,7 @@ export const site = {
   tagline: "Beyond charity. Building self-reliant communities.",
   description:
     "An Nur Charity Foundation empowers communities in Malawi through education, agriculture, social welfare, and economic dignity.",
-  url: "https://annurcharityfoundation.org",
+  url: "https://annurmw.com",
 };
 
 export const heroStats = [
@@ -73,6 +73,50 @@ export const trustPoints = [
   "CONGOMA member",
   "100% Zakat distribution",
 ];
+
+export const aboutData = {
+  vision: "To create a self-sustaining, empowered, and thriving Muslim community",
+  mission:
+    "Fostering independence through structured support rooted in Islamic values. We aim to be the “organizational glue” for the Ummah.",
+  philosophy: {
+    title: "The Madinah Model",
+    subtitle: "Vision, Mission & Philosophy",
+    statement:
+      "Our programs operate on the principle that the Masjid serves as the community center—a hub for advancement where every project is a pathway from dependence to dignity.",
+  },
+  values: [
+    {
+      title: "Integrity",
+      description:
+        "Operating with complete transparency, accountability, and unwavering trust in every intervention and allocation.",
+    },
+    {
+      title: "Empathy",
+      description:
+        "Deep listening and understanding of community needs, walking hand-in-hand with the families we serve.",
+    },
+    {
+      title: "Sustainability",
+      description:
+        "Building long-term self-sufficiency rather than short-term dependency through education, farming, and enterprise.",
+    },
+    {
+      title: "Faith",
+      description:
+        "Rooted in Islamic principles of compassion, dignity, brotherhood, and stewardship for the Ummah.",
+    },
+  ],
+  modelChapters: [
+    { label: "01", title: "Masjid", text: "A trusted community anchor and center of advancement." },
+    { label: "02", title: "Imam", text: "Leadership that knows the families and local realities by name." },
+    { label: "03", title: "Community Mapping", text: "Listening, observing, and engaging before intervention." },
+    { label: "04", title: "Need Assessment", text: "The real barriers are identified with deep local context." },
+    { label: "05", title: "Training", text: "Families gain practical knowledge, tools, and confidence." },
+    { label: "06", title: "Assets", text: "Support becomes productive and regenerative, not only consumable." },
+    { label: "07", title: "Income", text: "Skills, land, and assets create enduring household stability." },
+    { label: "08", title: "Self-Reliance", text: "Empowered communities return strength and aid back into the system." },
+  ],
+};
 
 export const featuredPrograms = [
   {

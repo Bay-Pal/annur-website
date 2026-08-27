@@ -39,18 +39,20 @@ export default function SiteFooter() {
 
         <div>
           <h3>Explore</h3>
-          <Link href="/#about">About</Link>
-          <Link href="/#our-work">Our Work</Link>
-          <Link href="/#impact">Impact</Link>
-          <Link href="/#stories">News & Stories</Link>
+          <Link href="/about">About Us</Link>
+          <Link href="/about#vision-mission">Vision & Mission</Link>
+          <Link href="/about#madinah-model">The Madinah Model</Link>
+          <Link href="/impact-stories">Impact Stories</Link>
+          <Link href="/gallery/all">Photo Gallery</Link>
         </div>
 
         <div>
-          <h3>Get involved</h3>
-          <Link href="/#join">Get Involved</Link>
-          <Link href="/#join">Contact</Link>
-          <Link href="/#join">Donate</Link>
-          <Link href="/our-work/education">Our Work</Link>
+          <h3>Our Work</h3>
+          <Link href="/our-work/education">Education</Link>
+          <Link href="/our-work/agriculture">Agriculture</Link>
+          <Link href="/our-work/social-welfare">Social Welfare</Link>
+          <Link href="/our-work/economic-empowerment">Economic Empowerment</Link>
+          <Link href="/#join">Contact & Donate</Link>
         </div>
 
         <div>

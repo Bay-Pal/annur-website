@@ -6,12 +6,10 @@ import Icon from "@/components/ui/Icon";
 
 const navItems = [
   { label: "Home", href: "/" },
-  { label: "About", href: "/#about" },
-  { label: "The Model", href: "/#model" },
-  { label: "Stories", href: "/#stories" },
-  { label: "Impact", href: "/#impact" },
+  { label: "About", href: "/about" },
   { label: "Our Work", href: "/#our-work" },
-  { label: "Get Involved", href: "/#join" },
+  { label: "Stories", href: "/impact-stories" },
+  { label: "Gallery", href: "/gallery/all" },
   { label: "Contact", href: "/#join" },
 ];
 

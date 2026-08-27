@@ -1,14 +1,14 @@
 backend:
   name: github
-  repo: faizmohammed/annur
+  repo: Bay-Pal/annur-website
   branch: main
 
 media_folder: "public/uploads"
 public_folder: "/uploads"
 
 publish_mode: editorial_workflow
-site_url: "https://annurcharityfoundation.org"
-display_url: "https://annurcharityfoundation.org"
+site_url: "https://annurmw.com"
+display_url: "https://annurmw.com"
 logo_url: "/favicon.svg"
 
 collections:

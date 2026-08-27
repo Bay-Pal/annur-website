@@ -5,18 +5,7 @@ import Icon from "@/components/ui/Icon";
 import SiteFooter from "@/components/layout/SiteFooter";
 import SiteHeader from "@/components/layout/SiteHeader";
 import { getFeaturedImpactStories } from "@/lib/content";
-import { featuredPrograms } from "@/lib/site-data";
-
-const modelChapters = [
-  { label: "01", title: "Masjid", text: "A trusted community anchor." },
-  { label: "02", title: "Imam", text: "Leadership that knows the families by name." },
-  { label: "03", title: "Community Mapping", text: "Listening before intervention." },
-  { label: "04", title: "Need Assessment", text: "The real barriers are identified with local context." },
-  { label: "05", title: "Training", text: "Families gain practical knowledge and confidence." },
-  { label: "06", title: "Assets", text: "Support becomes productive, not only consumable." },
-  { label: "07", title: "Income", text: "Skills, land, and assets begin creating household stability." },
-  { label: "08", title: "Self-Reliance", text: "Communities return strength back into the system." },
-];
+import { aboutData, featuredPrograms } from "@/lib/site-data";
 
 const proofStats = [
   { label: "Masjid-Madrassah complexes", value: 15, suffix: "+" },
@@ -33,6 +22,7 @@ export default function HomePage() {
     <>
       <SiteHeader />
       <main className="documentary-home" id="home">
+        {/* Hero Section */}
         <section className="doc-hero" aria-label="An Nur Charity Foundation">
           <Image
             src="/editorial/farmer-hero.png"
@@ -44,37 +34,41 @@ export default function HomePage() {
           />
           <div className="doc-hero__veil" />
           <div className="doc-container doc-hero__content">
-            <p className="doc-kicker">Chapter One</p>
-            <h1>Beyond Charity. Building Self-Reliant Communities.</h1>
+            <p className="doc-kicker">AN NUR CHARITY FOUNDATION</p>
+            <h1>Building Self-Reliant Communities</h1>
             <p>
-              In Malawi, transformation begins when aid becomes a pathway to
-              independence.
+              Empowering families across Malawi through faith, education, and sustainable livelihoods.
             </p>
-            <Link className="doc-arrow-link" href="/#model">
-              Discover the model
-            </Link>
-          </div>
-        </section>
-
-        <section className="doc-chapter doc-opening" id="about">
-          <div className="doc-container doc-opening__grid">
-            <p className="doc-chapter-label">What An Nur does</p>
-            <div>
-              <h2>A faith-based community development organization in Malawi.</h2>
-              <p className="doc-opening__lead">
-                An Nur is a faith-based community development organization in
-                Malawi helping families move from dependency to self-reliance
-                through education, agriculture, livelihood programs, and orphan care.
-              </p>
-              <p>
-                Relief can answer an urgent moment. An Nur is designed for what comes
-                after: a model that sees the family, the imam, the masjid, the farm,
-                the classroom, and the path to earning as one connected story.
-              </p>
+            <div style={{ display: "flex", gap: "16px", flexWrap: "wrap", marginTop: "24px" }}>
+              <Link className="btn btn-primary" href="/#our-work">
+                Explore Our Work
+              </Link>
+              <Link className="btn btn-secondary" href="/about">
+                About Us
+              </Link>
             </div>
           </div>
         </section>
 
+        {/* Concise Mission Overview */}
+        <section className="doc-chapter doc-opening" id="about">
+          <div className="doc-container doc-opening__grid">
+            <p className="doc-chapter-label">Our Approach</p>
+            <div>
+              <h2>From Relief to Self-Reliance</h2>
+              <p className="doc-opening__lead">
+                We empower vulnerable families in Malawi through structured, faith-rooted support—turning temporary aid into enduring independence.
+              </p>
+              <div style={{ marginTop: "20px" }}>
+                <Link className="doc-arrow-link" href="/about">
+                  Learn about our model &amp; philosophy
+                </Link>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Photo Break */}
         <section className="doc-photo-break" aria-label="Field work in Malawi">
           <Image
             src="/editorial/farmer-hero.png"
@@ -84,52 +78,62 @@ export default function HomePage() {
             sizes="100vw"
           />
           <div className="doc-photo-break__caption">
-            <span>Field work</span>
+            <span>Field work in Malawi</span>
             <strong>Food security becomes dignity when people can grow again.</strong>
           </div>
         </section>
 
-        <section className="doc-chapter doc-model" id="model">
+        {/* What the Model Carries (Our 4 Pillars) */}
+        <section className="doc-chapter doc-work" id="our-work">
           <div className="doc-container">
-            <div className="doc-model__intro">
-              <p className="doc-chapter-label">The An Nur Model</p>
-              <h2>A community framework built around trust, continuity, and return.</h2>
+            <div className="doc-section-heading">
+              <p className="doc-chapter-label">Our Core Initiatives</p>
+              <h2>Four Pillars for Self-Reliance</h2>
             </div>
 
-            <div className="doc-model__stage">
-              <div className="doc-model__statement">
-                <span>Beyond charity</span>
-                <strong>Masjid-centered transformation</strong>
-                <p>
-                  The organization’s differentiator is a model that turns trusted
-                  community infrastructure into a pathway for education, welfare,
-                  livelihood, and food security.
-                </p>
-              </div>
-
-              <div className="doc-model__chapters">
-                {modelChapters.map((chapter) => (
-                  <article className="doc-model-step" key={chapter.label}>
-                    <span>{chapter.label}</span>
-                    <h3>{chapter.title}</h3>
-                    <p>{chapter.text}</p>
-                  </article>
-                ))}
-              </div>
-              <div className="doc-model-ribbon" aria-hidden="true">
-                {modelChapters.map((chapter) => (
-                  <span key={chapter.label}>{chapter.title}</span>
-                ))}
-              </div>
+            <div className="doc-pillar-grid">
+              {featuredPrograms.map((program) => (
+                <Link
+                  className="doc-pillar"
+                  href={`/our-work/${program.slug}`}
+                  key={program.slug}
+                >
+                  <Icon name={program.icon} />
+                  <span>{program.title}</span>
+                  <p>{program.summary}</p>
+                </Link>
+              ))}
             </div>
           </div>
         </section>
 
+        {/* Impact Stats */}
+        <section className="doc-chapter doc-proof" id="impact">
+          <div className="doc-container">
+            <div className="doc-section-heading">
+              <p className="doc-chapter-label">Impact Evidence</p>
+              <h2>Measurable Community Outcomes</h2>
+            </div>
+
+            <div className="doc-proof-grid">
+              {proofStats.map((stat) => (
+                <article className="doc-proof-stat" key={stat.label}>
+                  <strong>
+                    <AnimatedCounter value={stat.value} suffix={stat.suffix} />
+                  </strong>
+                  <span>{stat.label}</span>
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Stories from the Field */}
         <section className="doc-chapter doc-stories" id="stories">
           <div className="doc-container">
             <div className="doc-section-heading">
-              <p className="doc-chapter-label">Stories First</p>
-              <h2>Proof begins in ordinary lives.</h2>
+              <p className="doc-chapter-label">Real Lives</p>
+              <h2>Stories of Transformation</h2>
             </div>
 
             <div className="doc-story-grid">
@@ -154,52 +158,16 @@ export default function HomePage() {
                 </Link>
               ))}
             </div>
-          </div>
-        </section>
 
-        <section className="doc-chapter doc-proof" id="impact">
-          <div className="doc-container">
-            <div className="doc-section-heading">
-              <p className="doc-chapter-label">Impact as Evidence</p>
-              <h2>The numbers matter because the stories do.</h2>
-            </div>
-
-            <div className="doc-proof-grid">
-              {proofStats.map((stat) => (
-                <article className="doc-proof-stat" key={stat.label}>
-                  <strong>
-                    <AnimatedCounter value={stat.value} suffix={stat.suffix} />
-                  </strong>
-                  <span>{stat.label}</span>
-                </article>
-              ))}
+            <div style={{ textAlign: "center", marginTop: "40px" }}>
+              <Link className="doc-arrow-link" href="/impact-stories">
+                View all Impact Stories
+              </Link>
             </div>
           </div>
         </section>
 
-        <section className="doc-chapter doc-work" id="our-work">
-          <div className="doc-container">
-            <div className="doc-section-heading">
-              <p className="doc-chapter-label">What the model carries</p>
-              <h2>Four pillars, one journey.</h2>
-            </div>
-
-            <div className="doc-pillar-grid">
-              {featuredPrograms.map((program) => (
-                <Link
-                  className="doc-pillar"
-                  href={`/our-work/${program.slug}`}
-                  key={program.slug}
-                >
-                  <Icon name={program.icon} />
-                  <span>{program.title}</span>
-                  <p>{program.summary}</p>
-                </Link>
-              ))}
-            </div>
-          </div>
-        </section>
-
+        {/* Final CTA */}
         <section className="doc-final" id="join">
           <div className="doc-container doc-final__grid">
             <div>
@@ -207,7 +175,7 @@ export default function HomePage() {
               <h2>Help build communities that can stand, grow, and give.</h2>
             </div>
             <div className="doc-final__actions">
-              <a href="mailto:hello@annurcharityfoundation.org">Start a conversation</a>
+              <a href="mailto:info@annurmw.com">Start a conversation</a>
               <a href="https://wa.me/265000000000" target="_blank" rel="noreferrer">
                 WhatsApp
               </a>
