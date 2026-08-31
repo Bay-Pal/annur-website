@@ -2,9 +2,6 @@ media:
   - name: uploads
     input: public/uploads
     output: /uploads
-  - name: editorial
-    input: public/editorial
-    output: /editorial
 
 content:
   - name: impact-stories
@@ -20,144 +17,67 @@ content:
         order: desc
     fields:
       - name: title
-        label: 1. Story Headline / Title
+        label: Story Title
         type: string
         required: true
-        description: "Use a human, emotional title (e.g. Empowering 1,200+ Farmers in Dwangwa)"
 
       - name: slug
-        label: 2. URL Slug (Web Address)
+        label: URL Slug (e.g. farmer-transformation-dwangwa)
         type: string
         required: true
-        description: "Lowercase with dashes, e.g. farmer-transformation-dwangwa"
-
-      - name: excerpt
-        label: 3. Short Summary / Excerpt
-        type: string
-        description: "1-2 sentence hook displayed on story cards and social shares."
-
-      - name: featuredImage
-        label: 4. Main Cover Photo (Hero Image)
-        type: image
-        options:
-          media: uploads
-        description: "The primary high-resolution photo displayed at the top of the story."
-
-      - name: imageAlt
-        label: Main Image Description
-        type: string
-        description: "Short description of the cover photo (for accessibility)."
-
-      - name: galleryImages
-        label: 5. Additional Project Photos (Photo Gallery)
-        type: list
-        description: "Click '+ Add' to attach 2, 3, 5+ more project photos."
-        fields:
-          - name: src
-            label: Photo File
-            type: image
-            options:
-              media: uploads
-          - name: alt
-            label: Caption / Description
-            type: string
 
       - name: category
-        label: 6. Programme Category
+        label: Programme / Category
         type: select
+        required: true
         options:
-          - Agriculture
-          - Education
-          - Islamic Center with Boarding Facilities
-          - Women’s Empowerment
-          - Livestock
-          - Community Leadership
+          values:
+            - Education & Scholarships
+            - Sustainable Agriculture
+            - Islamic Center with Boarding Facilities
+            - Livestock & Agriculture
+            - Clean Water & Boreholes
+            - Economic & Women's Empowerment
+            - Community Welfare
+
+      - name: excerpt
+        label: Short Summary (1-2 sentences)
+        type: string
         required: true
 
-      - name: relatedProgram
-        label: Related Program
-        type: select
-        options:
-          - agriculture
-          - education
-          - orphan-care
-          - womens-empowerment
-          - livestock
-          - community-welfare
-
-      - name: location
-        label: 7. Location in Malawi
-        type: string
-        default: "Central Region, Malawi"
-
-      - name: beneficiaryName
-        label: 8. Beneficiary / Community Focus
-        type: string
-        description: "e.g. Smallholder farming families, Boarding students"
-
-      - name: impactMetrics
-        label: 9. Impact Metric Badges (Key Numbers)
-        type: list
-        description: "Key statistics shown at the top of the story (e.g. Label: 'Farmers Supported', Value: '1,228+')"
-        fields:
-          - name: label
-            label: Metric Label
-            type: string
-          - name: value
-            label: Value
-            type: string
-
-      - name: beforeSummary
-        label: 10. Before Situation
-        type: string
-        description: "Brief summary of the challenge before AN NUR's intervention."
-
-      - name: afterSummary
-        label: 11. Transformation / Outcome
-        type: string
-        description: "Brief summary of the outcome and self-reliance achieved."
-
-      - name: publishedDate
-        label: 12. Publication Date
-        type: date
-        required: true
-
-      - name: status
-        label: 13. Publishing Status
-        type: select
-        options:
-          - published
-          - draft
-        default: published
-
-      - name: featured
-        label: 14. Feature on Homepage
-        type: boolean
-        default: false
-
-      - name: seoTitle
-        label: SEO Title
-        type: string
-
-      - name: seoDescription
-        label: SEO Description
-        type: string
-
-      - name: openGraphImage
-        label: Social Share Image
+      - name: featuredImage
+        label: Main Cover Photo (Hero Image)
         type: image
         options:
           media: uploads
 
-      - name: tags
-        label: Tags
-        type: list
-        field:
-          type: string
+      - name: galleryImages
+        label: Project Photo Gallery (Multiple Carousel Images)
+        type: image
+        list: true
+        options:
+          media: uploads
 
       - name: body
-        label: 15. Story Narrative (Full Article & In-text Photos)
+        label: Story Narrative
         type: rich-text
         options:
           media: uploads
-        description: "Write the full story narrative here. You can also insert photos directly between paragraphs!"
+
+      - name: publishedDate
+        label: Publish Date
+        type: date
+
+      - name: status
+        label: Status
+        type: select
+        options:
+          values:
+            - published
+            - draft
+        default: published
+
+      - name: featured
+        label: Show on Homepage
+        type: boolean
+        default: false
