@@ -20,48 +20,50 @@ content:
         order: desc
     fields:
       - name: title
-        label: Story Title
+        label: 1. Story Headline / Title
         type: string
         required: true
-        description: "Use a human, emotional, story-led title."
+        description: "Use a human, emotional title (e.g. Empowering 1,200+ Farmers in Dwangwa)"
 
       - name: slug
-        label: URL Slug
+        label: 2. URL Slug (Web Address)
         type: string
         required: true
-        description: "SEO-friendly URL identifier, e.g. farmer-transformation-dwangwa"
+        description: "Lowercase with dashes, e.g. farmer-transformation-dwangwa"
 
       - name: excerpt
-        label: Excerpt / Hook
+        label: 3. Short Summary / Excerpt
         type: string
-        description: "One or two sentences summarizing the story for cards & SEO."
+        description: "1-2 sentence hook displayed on story cards and social shares."
 
       - name: featuredImage
-        label: Featured Image
+        label: 4. Main Cover Photo (Hero Image)
         type: image
         options:
           media: uploads
+        description: "The primary high-resolution photo displayed at the top of the story."
 
       - name: imageAlt
-        label: Image Alt Text
+        label: Main Image Description
         type: string
-        description: "Describe what is seen in the image for accessibility and SEO."
+        description: "Short description of the cover photo (for accessibility)."
 
       - name: galleryImages
-        label: Gallery Images
+        label: 5. Additional Project Photos (Photo Gallery)
         type: list
+        description: "Click '+ Add' to attach 2, 3, 5+ more project photos."
         fields:
           - name: src
-            label: Image
+            label: Photo File
             type: image
             options:
               media: uploads
           - name: alt
-            label: Alt Text
+            label: Caption / Description
             type: string
 
       - name: category
-        label: Category
+        label: 6. Programme Category
         type: select
         options:
           - Agriculture
@@ -84,18 +86,19 @@ content:
           - community-welfare
 
       - name: location
-        label: Location
+        label: 7. Location in Malawi
         type: string
         default: "Central Region, Malawi"
 
       - name: beneficiaryName
-        label: Beneficiary / Focus Group
+        label: 8. Beneficiary / Community Focus
         type: string
-        description: "e.g. Children in residential boarding care, Smallholder farmers"
+        description: "e.g. Smallholder farming families, Boarding students"
 
       - name: impactMetrics
-        label: Impact Metrics
+        label: 9. Impact Metric Badges (Key Numbers)
         type: list
+        description: "Key statistics shown at the top of the story (e.g. Label: 'Farmers Supported', Value: '1,228+')"
         fields:
           - name: label
             label: Metric Label
@@ -105,36 +108,32 @@ content:
             type: string
 
       - name: beforeSummary
-        label: Before Situation
+        label: 10. Before Situation
         type: string
-        description: "Vulnerability or challenge faced before the intervention."
+        description: "Brief summary of the challenge before AN NUR's intervention."
 
       - name: afterSummary
-        label: After Outcome
+        label: 11. Transformation / Outcome
         type: string
-        description: "The measurable transformation and self-reliance achieved."
+        description: "Brief summary of the outcome and self-reliance achieved."
 
       - name: publishedDate
-        label: Published Date
+        label: 12. Publication Date
         type: date
         required: true
 
-      - name: updatedDate
-        label: Updated Date
-        type: date
-
-      - name: featured
-        label: Featured Story
-        type: boolean
-        default: false
-
       - name: status
-        label: Publishing Status
+        label: 13. Publishing Status
         type: select
         options:
           - published
           - draft
         default: published
+
+      - name: featured
+        label: 14. Feature on Homepage
+        type: boolean
+        default: false
 
       - name: seoTitle
         label: SEO Title
@@ -157,7 +156,8 @@ content:
           type: string
 
       - name: body
-        label: Story Narrative
+        label: 15. Story Narrative (Full Article & In-text Photos)
         type: rich-text
         options:
           media: uploads
+        description: "Write the full story narrative here. You can also insert photos directly between paragraphs!"

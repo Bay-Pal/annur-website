@@ -4,6 +4,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import SiteFooter from "@/components/layout/SiteFooter";
 import SiteHeader from "@/components/layout/SiteHeader";
+import StoryImageCarousel from "@/components/ui/StoryImageCarousel";
 import {
   getImpactStories,
   getImpactStoryBySlug,
@@ -258,30 +259,18 @@ export default async function StoryPage({ params }: StoryParams) {
           </div>
         </section>
 
-        {/* Gallery Section if exists */}
+        {/* Interactive Photo Gallery Carousel */}
         {story.galleryImages && story.galleryImages.length > 0 && (
-          <section className="story-gallery-section">
+          <section className="story-gallery-section" aria-label="Project Photo Gallery">
             <div className="doc-container">
               <div className="story-section-heading">
-                <span className="story-section-eyebrow">Field Photography</span>
+                <span className="story-section-eyebrow">Project Photo Gallery</span>
                 <h2>Moments from {story.location}</h2>
               </div>
-              <div className="story-gallery-grid">
-                {story.galleryImages.map((image) => (
-                  <div className="story-gallery-card" key={image.src}>
-                    <div className="story-gallery-media">
-                      <Image
-                        src={image.src}
-                        alt={image.alt}
-                        fill
-                        className="story-gallery-photo"
-                        sizes="(max-width: 900px) 100vw, 50vw"
-                      />
-                    </div>
-                    {image.alt && <p className="story-gallery-caption">{image.alt}</p>}
-                  </div>
-                ))}
-              </div>
+              <StoryImageCarousel
+                images={story.galleryImages}
+                title={`Photo gallery from ${story.location}`}
+              />
             </div>
           </section>
         )}
