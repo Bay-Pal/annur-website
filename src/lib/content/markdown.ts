@@ -114,9 +114,18 @@ function asMetricArray(value: FrontmatterValue | undefined): ImpactMetric[] {
 function asImageArray(value: FrontmatterValue | undefined): StoryImage[] {
   return Array.isArray(value)
     ? value
-        .filter((item): item is Record<string, string> => typeof item === "object")
-        .map((item) => ({ src: item.src ?? "", alt: item.alt ?? "" }))
-        .filter((item) => item.src && item.alt)
+        .map((item) => {
+          if (typeof item === "string" && item.trim()) {
+            return { src: item.trim(), alt: "An Nur project photo" };
+          }
+          if (typeof item === "object" && item !== null) {
+            const src = item.src ?? "";
+            const alt = item.alt || "An Nur project photo";
+            return { src, alt };
+          }
+          return null;
+        })
+        .filter((item): item is StoryImage => Boolean(item && item.src))
     : [];
 }
 
