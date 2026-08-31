@@ -30,7 +30,7 @@ const iconMap: Record<string, "graduation" | "leaf" | "heart" | "spark" | "mosqu
   "boreholes-water": "spark",
   "economic-empowerment": "spark",
   "womens-empowerment": "spark",
-  "scholarships": "graduation",
+  scholarships: "graduation",
   "orphan-care": "heart",
   "community-welfare": "heart",
   "masjid-development": "mosque",
@@ -44,47 +44,28 @@ export default function OurWorkPage() {
       <SiteHeader />
       <main className="our-work-page">
         {/* Hero */}
-        <section className="our-work-hero" aria-label="Our Work Overview">
-          <div className="container our-work-hero__content">
-            <p className="eyebrow">Our Work in Malawi</p>
-            <h1>Building Self-Reliance Across Every Part of Community Life</h1>
-            <p className="our-work-hero__lead">
-              Our programmes connect education, social welfare, livelihoods and agriculture
-              to help families and communities build lasting independence.
-            </p>
-
-            <div className="our-work-hero__stats">
-              <div className="our-work-hero__stat">
-                <strong>15+</strong>
-                <span>Masjid-Madrassah Complexes</span>
-              </div>
-              <div className="our-work-hero__stat">
-                <strong>945+</strong>
-                <span>Students Enrolled</span>
-              </div>
-              <div className="our-work-hero__stat">
-                <strong>1,228+</strong>
-                <span>Farmers Supported</span>
-              </div>
-              <div className="our-work-hero__stat">
-                <strong>0%</strong>
-                <span>Management Fees</span>
-              </div>
+        <section className="about-hero" aria-label="Our Work Overview">
+          <div className="doc-container">
+            <div className="about-hero__content">
+              <p className="doc-chapter-label">Our Work in Malawi</p>
+              <h1>Building Self-Reliance Across Every Part of Community Life</h1>
+              <p className="about-hero__lead">
+                Our programmes connect education, social welfare, livelihoods, and agriculture
+                to help families and communities move from vulnerability to lasting independence.
+              </p>
             </div>
           </div>
         </section>
 
         {/* All Programmes */}
-        <section className="section section-light" id="all-initiatives">
-          <div className="container">
-            <div className="our-work-intro">
-              <div className="our-work-intro__heading">
-                <span className="our-work-intro__tag">Four Programme Areas</span>
-                <h2>Every Programme, Initiative and Community Intervention</h2>
-              </div>
-              <p className="our-work-intro__text">
+        <section className="doc-chapter section-light" id="all-initiatives">
+          <div className="doc-container">
+            <div className="doc-section-heading">
+              <p className="doc-chapter-label">Four Core Pillars &bull; Comprehensive Action</p>
+              <h2>Every Programme, Initiative &amp; Community Intervention</h2>
+              <p className="about-section-lead">
                 Every initiative is an integrated part of The Madinah Model — grounded in local
-                masjids, guided by community leadership, and measured by real household outcomes.
+                masjids, guided by community leadership, and measured by genuine household outcomes.
               </p>
             </div>
 
@@ -96,7 +77,7 @@ export default function OurWorkPage() {
                   <article className="our-work-card" key={program.slug}>
                     <div className="our-work-card__header">
                       <div className="our-work-card__icon">
-                        <Icon name={iconName} size={26} />
+                        <Icon name={iconName} size={24} />
                       </div>
                       <span className="our-work-card__category">{program.category}</span>
                     </div>
@@ -128,24 +109,22 @@ export default function OurWorkPage() {
         </section>
 
         {/* The Madinah Model Connection Banner */}
-        <section className="section our-work-model-section">
-          <div className="container">
-            <div className="our-work-model-banner">
-              <div className="our-work-model-banner__content">
-                <span className="eyebrow">The Guiding Philosophy</span>
-                <h2>Built on The Madinah Model</h2>
-                <p>
-                  We believe aid should build dignity, not dependence. Discover how our 8-stage
-                  lifecycle turns local infrastructure into an engine for self-sustaining growth.
-                </p>
-                <div className="our-work-model-banner__actions">
-                  <Link href="/about#madinah-model" className="btn-gold">
-                    Explore The 8-Stage Model &rarr;
-                  </Link>
-                  <Link href="/about" className="btn-outline-light">
-                    About Our Governance
-                  </Link>
-                </div>
+        <section className="about-model-section" style={{ borderTop: "1px solid rgba(255,255,255,0.08)" }}>
+          <div className="doc-container">
+            <div className="model-statement-banner">
+              <span className="doc-madinah-nucleus-tag">The Guiding Philosophy</span>
+              <h3>Built on The Madinah Model</h3>
+              <p>
+                We believe aid should build dignity, not dependence. Discover how our 8-stage
+                lifecycle turns local infrastructure into an engine for self-sustaining growth.
+              </p>
+              <div style={{ marginTop: 24, display: "flex", gap: 16, flexWrap: "wrap" }}>
+                <Link href="/about#madinah-model" className="btn btn-primary">
+                  Explore The 8-Stage Model &rarr;
+                </Link>
+                <Link href="/about" className="btn btn-secondary">
+                  About Our Governance
+                </Link>
               </div>
             </div>
           </div>
@@ -155,5 +134,3 @@ export default function OurWorkPage() {
     </>
   );
 }
-
-

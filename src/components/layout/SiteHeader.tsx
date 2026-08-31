@@ -3,15 +3,16 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import DonationModal from "@/components/ui/DonationModal";
 import Icon from "@/components/ui/Icon";
 
 const navItems = [
   { label: "Home", href: "/" },
   { label: "About", href: "/about" },
-  { label: "Our Work", href: "/#our-work" },
+  { label: "Our Work", href: "/our-work" },
   { label: "Stories", href: "/impact-stories" },
   { label: "Gallery", href: "/gallery/all" },
-  { label: "Contact", href: "/#join" },
+  { label: "Contact", href: "/contact" },
 ];
 
 function LogoMark() {
@@ -89,41 +90,18 @@ export default function SiteHeader() {
             </button>
             <button className="btn btn-primary" type="button" onClick={() => setDonateOpen(true)}>
               <span aria-hidden="true" className="btn-icon">
-                <Icon name="heart" />
+                <Icon name="heart" size={18} />
               </span>
-              Donate Now
+              <span>Donate Now</span>
             </button>
           </div>
         </div>
       </header>
 
-      <div
-        className={`modal ${donateOpen ? "is-open" : ""}`}
-        aria-hidden={!donateOpen}
-        role="presentation"
-      >
-        <button className="modal-backdrop" type="button" aria-label="Close donation modal" onClick={() => setDonateOpen(false)} />
-        <div className="modal-panel" role="dialog" aria-modal="true" aria-labelledby="donate-title">
-          <button className="modal-close" type="button" aria-label="Close dialog" onClick={() => setDonateOpen(false)}>
-            X
-          </button>
-          <p className="eyebrow">Donation gateway</p>
-          <h3 id="donate-title">Online donations coming soon.</h3>
-          <p>
-            The experience is already structured for Stripe, PayPal, Flutterwave, bank
-            transfer, or a custom gateway later.
-          </p>
-          <ul className="donate-list">
-            <li>Stripe-ready UI</li>
-            <li>PayPal-ready UI</li>
-            <li>Flutterwave-ready UI</li>
-            <li>Bank transfer support</li>
-          </ul>
-          <button className="btn btn-primary btn-lg" type="button" onClick={() => setDonateOpen(false)}>
-            Understood
-          </button>
-        </div>
-      </div>
+      <DonationModal
+        isOpen={donateOpen}
+        onClose={() => setDonateOpen(false)}
+      />
     </>
   );
 }

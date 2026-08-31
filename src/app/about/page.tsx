@@ -4,12 +4,13 @@ import Link from "next/link";
 import SiteFooter from "@/components/layout/SiteFooter";
 import SiteHeader from "@/components/layout/SiteHeader";
 import AnimatedCounter from "@/components/ui/AnimatedCounter";
+import TransformationCycleVisual from "@/components/ui/TransformationCycleVisual";
 import { aboutData, site, trustPoints } from "@/lib/site-data";
 
 export const metadata: Metadata = {
-  title: "About Us · Vision, Mission & Philosophy",
+  title: "About Us · Vision, Mission & Strategic Vision 2050",
   description:
-    "Learn about AN NUR Charity Foundation, our Vision, Mission, Core Values, and The Madinah Model for sustainable community transformation in Malawi.",
+    "Learn about AN NUR Charity Foundation, our Vision, Mission, Core Values, The Transformation Cycle, The Madinah Model, and Strategic Vision 2050 for sustainable community transformation in Malawi.",
 };
 
 const proofStats = [
@@ -27,43 +28,39 @@ export default function AboutPage() {
       <main className="about-page">
         {/* Hero Section */}
         <section className="about-hero" aria-label="About AN NUR">
-          <div className="container about-hero__content">
-            <p className="eyebrow">About AN NUR Charity Foundation</p>
-            <h1>From Dependency to Dignity</h1>
-            <p className="about-hero__lead">
-              A faith-based community development organization in Malawi helping
-              families move from vulnerability to lasting self-reliance through
-              education, sustainable agriculture, livelihood creation, and orphan care.
-            </p>
+          <div className="doc-container">
+            <div className="about-hero__content">
+              <p className="doc-chapter-label">About AN NUR Charity Foundation</p>
+              <h1>From Dependency to Dignity</h1>
+              <p className="about-hero__lead">
+                A faith-based community development organization in Malawi helping
+                families move from vulnerability to lasting self-reliance through
+                education, sustainable agriculture, livelihood creation, and orphan care.
+              </p>
+            </div>
           </div>
         </section>
 
-        {/* Vision, Mission & Philosophy Slide Showcase */}
-        <section className="section section-light" id="vision-mission">
-          <div className="container">
+        {/* 01. Vision, Mission & Philosophy Slide Showcase */}
+        <section className="about-vision-section" id="vision-mission">
+          <div className="doc-container">
             <div className="slide-deck-card">
               <div className="slide-deck-content">
                 <div className="slide-deck-header">
-                  <h2>Vision, Mission &amp; Philosophy</h2>
-                  <div className="slide-deck-badge" aria-label="AN NUR">
-                    <svg viewBox="0 0 64 64" fill="none" className="slide-deck-logo">
-                      <path
-                        d="M32 8C24.4 14.4 20 23.1 20 32.4c0 12.1 7.4 19.9 12 23.6 4.7-3.7 12-11.5 12-23.6C44 23.1 39.6 14.4 32 8Z"
-                        stroke="#0d4f9e"
-                        strokeWidth="2.5"
+                  <div>
+                    <p className="doc-chapter-label">Foundational Pillars</p>
+                    <h2>Vision, Mission &amp; Philosophy</h2>
+                  </div>
+                  <div className="slide-deck-badge" aria-label="AN NUR Logo">
+                    <div className="slide-deck-logo-wrap">
+                      <Image
+                        src="/annur-logo.jpg"
+                        alt="An Nur Logo"
+                        width={44}
+                        height={44}
+                        className="slide-deck-logo-img"
                       />
-                      <path
-                        d="M32 19c-4.5 3.6-7 8.9-7 14.3 0 6.7 3.3 11.2 7 14.3 3.7-3.1 7-7.6 7-14.3 0-5.4-2.5-10.7-7-14.3Z"
-                        fill="#2e7fdc"
-                      />
-                      <path
-                        d="M14 50h36"
-                        stroke="#0d4f9e"
-                        strokeWidth="2.5"
-                        strokeLinecap="round"
-                      />
-                    </svg>
-                    <span className="slide-deck-badge-text">AN NUR</span>
+                    </div>
                   </div>
                 </div>
 
@@ -88,11 +85,11 @@ export default function AboutPage() {
                   <hr className="slide-deck-divider" />
                   <div className="slide-deck-values">
                     <span>Integrity</span>
-                    <span className="sep" aria-hidden="true">|</span>
+                    <span className="sep" aria-hidden="true">&bull;</span>
                     <span>Empathy</span>
-                    <span className="sep" aria-hidden="true">|</span>
+                    <span className="sep" aria-hidden="true">&bull;</span>
                     <span>Sustainability</span>
-                    <span className="sep" aria-hidden="true">|</span>
+                    <span className="sep" aria-hidden="true">&bull;</span>
                     <span>Faith</span>
                   </div>
                 </div>
@@ -112,22 +109,38 @@ export default function AboutPage() {
           </div>
         </section>
 
-        {/* The 8-Step Madinah Model */}
-        <section className="section section-dark" id="madinah-model">
-          <div className="container">
-            <div className="section-heading section-heading--dark">
-              <p className="eyebrow">The 8-Stage Lifecycle</p>
-              <div>
-                <h2>The Madinah Model in Action</h2>
-                <p>
-                  A community-first framework built around local trust, continuous support,
-                  and reinvested strength.
+        {/* 02. The Transformation Cycle Centered Showcase */}
+        <section className="about-cycle-section" id="transformation-cycle">
+          <div className="doc-container">
+            <div className="cycle-centered-card">
+              <div className="cycle-centered-header">
+                <p className="doc-chapter-label">The Multiplier Effect</p>
+                <h2>The Transformation Cycle</h2>
+                <p className="cycle-centered-lead">
+                  <strong>Shifting Mindsets: From Receiving to Giving</strong> &bull; Building hands that can feed themselves through a self-sustaining cycle centered on <strong>Dignity &amp; Independence</strong>.
                 </p>
               </div>
+
+              {/* Centered Interactive Visual Cycle Component */}
+              <TransformationCycleVisual />
+            </div>
+          </div>
+        </section>
+
+        {/* 03. The 8-Step Madinah Model */}
+        <section className="about-model-section" id="madinah-model">
+          <div className="doc-container">
+            <div className="doc-section-heading">
+              <p className="doc-chapter-label">The 8-Stage Lifecycle</p>
+              <h2>The Madinah Model in Action</h2>
+              <p className="about-section-lead">
+                A community-first framework built around local trust, continuous support,
+                and reinvested strength.
+              </p>
             </div>
 
             <div className="model-statement-banner">
-              <div className="model-statement-banner__badge">Beyond Relief</div>
+              <span className="doc-madinah-nucleus-tag">Beyond Relief</span>
               <h3>Masjid-Centered Transformation</h3>
               <p>
                 The organization’s differentiator is a model that turns trusted
@@ -148,18 +161,94 @@ export default function AboutPage() {
           </div>
         </section>
 
-        {/* Core Values Deep Dive */}
-        <section className="section section-light" id="core-values">
-          <div className="container">
-            <div className="section-heading">
-              <p className="eyebrow">Our Guiding Principles</p>
-              <div>
-                <h2>Core Values &amp; Institutional Trust</h2>
-                <p>
-                  Every intervention is guided by ethical stewardship, deep empathy,
-                  and lasting community ownership.
-                </p>
+        {/* 04. Strategic Vision 2050 Roadmap */}
+        <section className="about-vision2050-section" id="vision-2050">
+          <div className="doc-container">
+            <div className="slide-deck-card">
+              <div className="slide-deck-content">
+                <div className="slide-deck-header">
+                  <div>
+                    <p className="doc-chapter-label">Long-Term Horizon</p>
+                    <h2>Strategic Vision 2050</h2>
+                  </div>
+                  <div className="slide-deck-badge" aria-label="AN NUR Logo">
+                    <div className="slide-deck-logo-wrap">
+                      <Image
+                        src="/annur-logo.jpg"
+                        alt="An Nur Logo"
+                        width={44}
+                        height={44}
+                        className="slide-deck-logo-img"
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                <div className="slide-deck-body">
+                  <div className="slide-deck-block">
+                    <h3>A Roadmap for a Self-Sufficient Ummah</h3>
+                    <p>
+                      A structured multi-decade framework progressing from local consolidation in Malawi to national self-reliance and global replication.
+                    </p>
+                  </div>
+
+                  <div className="slide-deck-timeline">
+                    <div className="slide-timeline-phase">
+                      <span className="timeline-phase-tag">Phase 01 &bull; Short Term</span>
+                      <strong>Consolidation</strong>
+                      <p>Scale demo plots (Farm Field Schools) to 15+ locations and complete sustainable irrigation installations.</p>
+                    </div>
+
+                    <div className="slide-timeline-phase">
+                      <span className="timeline-phase-tag">Phase 02 &bull; Medium Term</span>
+                      <strong>National Impact</strong>
+                      <p>Establish communities across Malawi that are pious, confident, and economically stable.</p>
+                    </div>
+
+                    <div className="slide-timeline-phase slide-timeline-phase--highlight">
+                      <span className="timeline-phase-tag">Phase 03 &bull; Long Term</span>
+                      <strong>Global Replication</strong>
+                      <p>Replicate the model across <strong>33 iERA operational countries</strong> as an enduring blueprint for Muslim empowerment.</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="slide-deck-footer">
+                  <hr className="slide-deck-divider" />
+                  <div className="slide-deck-values">
+                    <span>15+ Field Schools</span>
+                    <span className="sep" aria-hidden="true">&bull;</span>
+                    <span>National Self-Reliance</span>
+                    <span className="sep" aria-hidden="true">&bull;</span>
+                    <span>33 iERA Countries</span>
+                  </div>
+                </div>
               </div>
+
+              <div className="slide-deck-visual">
+                <Image
+                  src="/editorial/education-story.png"
+                  alt="Young students in Malawi studying in an empowered classroom"
+                  fill
+                  priority
+                  className="slide-deck-image"
+                  sizes="(max-width: 1024px) 100vw, 45vw"
+                />
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* 05. Core Values Deep Dive */}
+        <section className="about-values-section" id="core-values">
+          <div className="doc-container">
+            <div className="doc-section-heading">
+              <p className="doc-chapter-label">Our Guiding Principles</p>
+              <h2>Core Values &amp; Institutional Trust</h2>
+              <p className="about-section-lead">
+                Every intervention is guided by ethical stewardship, deep empathy,
+                and lasting community ownership.
+              </p>
             </div>
 
             <div className="values-grid">
@@ -185,15 +274,13 @@ export default function AboutPage() {
           </div>
         </section>
 
-        {/* Impact Evidence Stats */}
-        <section className="section section-dark" id="impact-evidence">
-          <div className="container">
-            <div className="section-heading section-heading--dark">
-              <p className="eyebrow">Evidence of Impact</p>
-              <div>
-                <h2>Transforming Communities Across Malawi</h2>
-                <p>Measurable outcomes reflecting genuine household independence.</p>
-              </div>
+        {/* 06. Impact Evidence Stats */}
+        <section className="doc-proof" id="impact-evidence">
+          <div className="doc-container">
+            <div className="doc-section-heading">
+              <p className="doc-chapter-label">Evidence of Impact</p>
+              <h2>Transforming Communities Across Malawi</h2>
+              <p className="about-section-lead--dark">Measurable outcomes reflecting genuine household independence.</p>
             </div>
 
             <div className="doc-proof-grid">
@@ -209,7 +296,7 @@ export default function AboutPage() {
           </div>
         </section>
 
-        {/* Call to Action */}
+        {/* 07. Call to Action */}
         <section className="doc-final" id="contact">
           <div className="doc-container doc-final__grid">
             <div>
@@ -217,7 +304,7 @@ export default function AboutPage() {
               <h2>Partner with us in building self-reliant communities.</h2>
             </div>
             <div className="doc-final__actions">
-              <a href="mailto:info@annurmw.com">Start a Conversation</a>
+              <Link href="/contact">Start a Conversation</Link>
               <Link href="/impact-stories">Read Impact Stories</Link>
             </div>
           </div>
