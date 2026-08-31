@@ -40,7 +40,7 @@ export default async function GalleryPage({ params }: { params: Promise<{ catego
               <p className="doc-chapter-label">Visual Archive &bull; Field Photography</p>
               <h1>Community Gallery</h1>
               <p className="about-hero__lead">
-                Explore authentic moments of learning, sustainable farming, orphan care, and community empowerment across Malawi.
+                Explore authentic moments of learning, sustainable farming, Islamic boarding facilities, and community empowerment across Malawi.
               </p>
             </div>
           </div>

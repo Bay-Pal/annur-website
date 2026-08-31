@@ -64,7 +64,7 @@ export const heroStats = [
   { label: "Masjid-Madrassah complexes", value: "15+" },
   { label: "Students enrolled", value: "945+" },
   { label: "Farmers supported", value: "1,228+" },
-  { label: "Orphans supported", value: "58" },
+  { label: "Boarding students supported", value: "58" },
   { label: "Management fees", value: "0%" },
 ];
 
@@ -252,9 +252,9 @@ export const programs: Program[] = [
     summary:
       "Dignified care and targeted support for vulnerable children, families and communities.",
     details:
-      "Social welfare is the humane safety net that surrounds families as they move toward longer-term resilience. It connects residential orphan care, community mapping, targeted Zakaat distribution, and urgent family support into one accountable, faith-rooted response system.",
+      "Social welfare is the humane safety net that surrounds families as they move toward longer-term resilience. It connects our Islamic Center with Boarding Facilities, community mapping, targeted Zakaat distribution, and urgent family support into one accountable, faith-rooted response system.",
     outcomes: [
-      "58 orphans supported",
+      "58 boarding students supported",
       "Community mapping conducted",
       "Targeted Zakaat distributed",
     ],
@@ -264,7 +264,7 @@ export const programs: Program[] = [
       { label: "Focus", value: "Protection" },
     ],
     highlights: [
-      "Residential Orphan Care",
+      "Islamic Center with Boarding Facilities",
       "Community Mapping",
       "Targeted Zakaat & Family Support",
     ],
@@ -358,31 +358,31 @@ export const programs: Program[] = [
   },
   {
     slug: "orphan-care",
-    title: "Orphan Care",
+    title: "Islamic Center with Boarding Facilities",
     category: "Social Welfare",
     summary:
-      "A safe, stable and dignified support structure for children whose lives should not be defined by loss.",
+      "A safe, structured, and dignified boarding and learning environment providing shelter, education, and holistic care for vulnerable children.",
     details:
-      "Orphan care sits at the centre of An Nur's social welfare response, combining practical residential support with a humane, family-aware, and faith-based care model. It is a core part of the Social Welfare programme.",
+      "The Islamic Center with Boarding Facilities sits at the centre of An Nur's social welfare response, combining practical residential boarding support with comprehensive Islamic & secular education, nutrition, and faith-based nurturing. It is a core part of the Social Welfare programme.",
     outcomes: [
-      "58 orphans supported",
-      "Residential care provided",
-      "Dignified, stable support",
+      "58 boarding students supported",
+      "Full residential boarding care",
+      "Madrassah & secular education",
     ],
     metrics: [
-      { label: "Children supported", value: "58" },
-      { label: "Care focus", value: "Safety" },
-      { label: "Outcome", value: "Belonging" },
+      { label: "Boarding students", value: "58" },
+      { label: "Care model", value: "Full Boarding" },
+      { label: "Outcome", value: "Empowerment" },
     ],
     highlights: [
-      "Physical and emotional care",
-      "Long-term support structure",
-      "Stable family-like environment",
+      "Comprehensive Islamic & secular schooling",
+      "Full residential lodging & nutritious meals",
+      "Safe, faith-rooted campus community",
     ],
-    imageAlt: "A mother and child in a community care setting",
+    imageAlt: "Students in a learning environment at the Islamic Center with Boarding Facilities",
     imagePosition: "center",
     accent: "#3e9c64",
-    cta: "Explore Orphan Care",
+    cta: "Explore Boarding Facilities",
   },
   {
     slug: "community-welfare",
@@ -486,15 +486,15 @@ export const stories: Story[] = [
   },
   {
     slug: "orphan-care-story",
-    title: "Orphan Care",
+    title: "Islamic Center with Boarding Facilities",
     category: "Protection",
     summary:
-      "Orphan care is presented as a responsibility to protect dignity, not only a service to provide necessities.",
+      "Our Islamic Center with Boarding Facilities provides comprehensive residential care, Islamic education, and dignity for vulnerable children.",
     details:
       "The care model emphasizes consistency and safety. That consistency is what allows a child to trust, learn, and grow with confidence.",
     before: "Unstable support and vulnerability",
     after: "A safer, more stable care environment",
-    metrics: ["58 children supported", "Residential care", "Stable support"],
+    metrics: ["58 boarding students supported", "Full Boarding Center", "Stable support"],
     related: "orphan-care",
     imageAlt: "A protected care environment for vulnerable children",
   },
@@ -507,7 +507,7 @@ export const galleryCategories = [
   { slug: "masjids", title: "Masjids" },
   { slug: "students", title: "Students" },
   { slug: "women", title: "Women" },
-  { slug: "orphan-care", title: "Orphan Care" },
+  { slug: "orphan-care", title: "Islamic Center & Boarding" },
   { slug: "community-events", title: "Community Events" },
   { slug: "livestock", title: "Livestock" },
 ] as const;
@@ -562,10 +562,10 @@ export const galleryItems: GalleryItem[] = [
   },
   {
     slug: "orphan-care-support",
-    title: "Orphan Care Support",
+    title: "Islamic Center Boarding Support",
     category: "orphan-care",
-    summary: "Protection, dignity, and continuity for vulnerable children.",
-    imageAlt: "Children receiving orphan care support",
+    summary: "Protection, faith education, and continuity for children in our boarding facilities.",
+    imageAlt: "Students supported at the Islamic Center with Boarding Facilities",
   },
   {
     slug: "madrassah-development",

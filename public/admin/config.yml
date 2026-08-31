@@ -36,7 +36,7 @@ collections:
         fields:
           - { label: "Image", name: "src", widget: "image" }
           - { label: "Alt Text", name: "alt", widget: "string" }
-      - { label: "Category", name: "category", widget: "select", options: ["Agriculture", "Education", "Orphan Care", "Women’s Empowerment", "Livestock", "Community Leadership"] }
+      - { label: "Category", name: "category", widget: "select", options: ["Agriculture", "Education", "Islamic Center with Boarding Facilities", "Women’s Empowerment", "Livestock", "Community Leadership"] }
       - { label: "Related Program", name: "relatedProgram", widget: "select", options: ["agriculture", "education", "orphan-care", "womens-empowerment", "livestock", "community-welfare"] }
       - { label: "Location", name: "location", widget: "string", default: "Central Region, Malawi" }
       - { label: "Beneficiary Name", name: "beneficiaryName", widget: "string", hint: "Use a real name only when consent is confirmed. Otherwise use a safe description." }

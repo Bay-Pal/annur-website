@@ -60,7 +60,7 @@ export default function ImpactStoriesMagazine({ stories }: Props) {
           <h1>Real people. Real communities. Real transformation.</h1>
           <p>
             Stories from An Nur’s work across education, agriculture, livelihood,
-            orphan care, and community-led self-reliance in Malawi.
+            Islamic boarding facilities, and community-led self-reliance in Malawi.
           </p>
           <Link href={`/impact-stories/${featured.slug}`} className="doc-arrow-link">
             Read the featured story

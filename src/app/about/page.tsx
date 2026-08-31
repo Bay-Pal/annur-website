@@ -17,7 +17,7 @@ const proofStats = [
   { label: "Masjid-Madrassah complexes", value: 15, suffix: "+" },
   { label: "Students enrolled", value: 945, suffix: "+" },
   { label: "Farmers supported", value: 1228, suffix: "+" },
-  { label: "Orphans supported", value: 58, suffix: "" },
+  { label: "Boarding students supported", value: 58, suffix: "" },
   { label: "Management fees", value: 0, suffix: "%" },
 ];
 
@@ -35,7 +35,7 @@ export default function AboutPage() {
               <p className="about-hero__lead">
                 A faith-based community development organization in Malawi helping
                 families move from vulnerability to lasting self-reliance through
-                education, sustainable agriculture, livelihood creation, and orphan care.
+                education, sustainable agriculture, livelihood creation, and Islamic boarding facilities.
               </p>
             </div>
           </div>

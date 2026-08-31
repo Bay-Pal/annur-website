@@ -56,7 +56,7 @@ export default function DonationModal({ isOpen, onClose }: DonationModalProps) {
           </h2>
           <p className="donate-modal-subtitle">
             100% of your contribution directly funds sustainable agriculture, scholarships,
-            orphan care, and Masjid complexes in Malawi with <strong>0% admin deductions</strong>.
+            Islamic boarding facilities, and Masjid complexes in Malawi with <strong>0% admin deductions</strong>.
           </p>
         </div>
 
