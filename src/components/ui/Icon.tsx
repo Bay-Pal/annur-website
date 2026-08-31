@@ -9,7 +9,8 @@ type IconName =
   | "community"
   | "accountability"
   | "spark"
-  | "search";
+  | "search"
+  | "map-pin";
 
 export default function Icon({
   name,
@@ -109,6 +110,13 @@ export default function Icon({
         <svg viewBox="0 0 24 24" {...common}>
           <circle cx="11" cy="11" r="7" />
           <path d="m20 20-3.5-3.5" />
+        </svg>
+      );
+    case "map-pin":
+      return (
+        <svg viewBox="0 0 24 24" {...common}>
+          <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z" />
+          <circle cx="12" cy="10" r="3" />
         </svg>
       );
     default:

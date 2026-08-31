@@ -40,7 +40,7 @@ export default function HomePage() {
               Empowering families across Malawi through faith, education, and sustainable livelihoods.
             </p>
             <div style={{ display: "flex", gap: "16px", flexWrap: "wrap", marginTop: "24px" }}>
-              <Link className="btn btn-primary" href="/#our-work">
+              <Link className="btn btn-primary" href="/our-work">
                 Explore Our Work
               </Link>
               <Link className="btn btn-secondary" href="/about">
@@ -52,16 +52,18 @@ export default function HomePage() {
 
         {/* 02 — Concise Mission Overview */}
         <section className="doc-chapter doc-opening" id="about">
-          <div className="doc-container doc-opening__content">
-            <p className="doc-chapter-label">Our Approach</p>
-            <h2>From Relief to Self-Reliance</h2>
-            <p className="doc-opening__lead">
-              We empower vulnerable families in Malawi through structured, faith-rooted support—turning temporary aid into enduring independence.
-            </p>
-            <div className="doc-opening__action">
-              <Link className="doc-arrow-link" href="/about">
-                Learn about our model &amp; philosophy &rarr;
-              </Link>
+          <div className="doc-container">
+            <div className="doc-opening__content">
+              <p className="doc-chapter-label">Our Approach</p>
+              <h2>From Relief to Self-Reliance</h2>
+              <p className="doc-opening__lead">
+                We empower vulnerable families in Malawi through structured, faith-rooted support—turning temporary aid into enduring independence.
+              </p>
+              <div className="doc-opening__action">
+                <Link className="doc-arrow-link" href="/about">
+                  Learn about our model &amp; philosophy &rarr;
+                </Link>
+              </div>
             </div>
           </div>
         </section>
@@ -332,7 +334,7 @@ export default function HomePage() {
                   </div>
                   <div className="doc-amanah-badge-info">
                     <strong>NGORA Registered</strong>
-                    <span>Reg. No. NGO/L/22/047</span>
+                    <span>NGO Regulatory Authority</span>
                   </div>
                 </div>
 
@@ -342,7 +344,7 @@ export default function HomePage() {
                   </div>
                   <div className="doc-amanah-badge-info">
                     <strong>CONGOMA Member</strong>
-                    <span>Reg. No. C1698/2022</span>
+                    <span>Council for NGOs in Malawi</span>
                   </div>
                 </div>
 
@@ -352,7 +354,7 @@ export default function HomePage() {
                   </div>
                   <div className="doc-amanah-badge-info">
                     <strong>MRA Tax Compliant</strong>
-                    <span>TPIN: 70277051</span>
+                    <span>Malawi Revenue Authority</span>
                   </div>
                 </div>
               </div>

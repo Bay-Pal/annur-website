@@ -6,6 +6,17 @@ import { useMemo, useState } from "react";
 import type { GalleryItem } from "@/lib/site-data";
 import { galleryCategories } from "@/lib/site-data";
 
+const itemImageMap: Record<string, string> = {
+  "harvest-day": "/editorial/farmer-hero.png",
+  "learning-circles": "/editorial/education-story.png",
+  "women-in-training": "/editorial/skills-story.png",
+  "masjid-complex": "/hero.jpg",
+  "community-gathering": "/vision-mission-seedling.png",
+  "livestock-rotation": "/editorial-field.png",
+  "orphan-care-support": "/hero.jpg",
+  "madrassah-development": "/editorial/education-story.png",
+};
+
 function categoryLabel(slug: string) {
   return galleryCategories.find((item) => item.slug === slug)?.title ?? slug;
 }
@@ -58,13 +69,14 @@ export default function GalleryBrowser({
             value={query}
             onChange={(event) => setQuery(event.target.value)}
             type="search"
-            placeholder="Search gallery"
+            placeholder="Search gallery..."
           />
         </label>
       </div>
 
       <div className="gallery-grid">
-        {filtered.map((item, index) => {
+        {filtered.map((item) => {
+          const imgSrc = itemImageMap[item.slug] || "/editorial/farmer-hero.png";
           const className = [
             "gallery-card",
             item.wide ? "gallery-card--wide" : "",
@@ -79,15 +91,15 @@ export default function GalleryBrowser({
               className={className}
               type="button"
               onClick={() => setLightbox(item)}
-              style={{
-                backgroundImage:
-                  index % 3 === 0
-                    ? "linear-gradient(180deg, rgba(7,17,29,0.08), rgba(7,17,29,0.68)), linear-gradient(135deg, rgba(46,127,220,0.4), rgba(62,156,100,0.25))"
-                    : index % 3 === 1
-                      ? "linear-gradient(180deg, rgba(7,17,29,0.08), rgba(7,17,29,0.68)), linear-gradient(135deg, rgba(215,168,74,0.4), rgba(46,127,220,0.25))"
-                      : "linear-gradient(180deg, rgba(7,17,29,0.08), rgba(7,17,29,0.68)), linear-gradient(135deg, rgba(31,111,73,0.42), rgba(13,79,158,0.24))",
-              }}
             >
+              <Image
+                src={imgSrc}
+                alt={item.imageAlt}
+                fill
+                className="gallery-card__img"
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+              />
+              <div className="gallery-card__overlay" />
               <span className="gallery-card__content">
                 <span className="gallery-card__badge">{categoryLabel(item.category)}</span>
                 <h3>{item.title}</h3>
@@ -102,27 +114,30 @@ export default function GalleryBrowser({
         <button className="modal-backdrop" type="button" aria-label="Close gallery preview" onClick={() => setLightbox(null)} />
         <div className="modal-panel modal-panel--lightbox" role="dialog" aria-modal="true">
           <button className="modal-close" type="button" aria-label="Close lightbox" onClick={() => setLightbox(null)}>
-            X
+            ✕
           </button>
           {lightbox ? (
             <div>
-              <Image
-                src="/hero.jpg"
-                alt={lightbox.imageAlt}
-                width={1400}
-                height={900}
-                className="lightbox-media"
-                style={{ objectPosition: lightbox.imagePosition ?? "center" }}
-              />
-              <div style={{ padding: "18px 8px 4px" }}>
-                <p className="eyebrow" style={{ color: "#d7a84a" }}>
+              <div className="lightbox-image-wrapper">
+                <Image
+                  src={itemImageMap[lightbox.slug] || "/editorial/farmer-hero.png"}
+                  alt={lightbox.imageAlt}
+                  fill
+                  className="lightbox-media-img"
+                  style={{ objectPosition: lightbox.imagePosition ?? "center" }}
+                />
+              </div>
+              <div className="lightbox-details">
+                <p className="doc-chapter-label">
                   {categoryLabel(lightbox.category)}
                 </p>
-                <h3 style={{ margin: "0 0 8px" }}>{lightbox.title}</h3>
-                <p style={{ margin: 0, color: "rgba(247,244,239,.76)" }}>{lightbox.summary}</p>
-                <Link href={`/gallery/${lightbox.category}`} className="text-button" style={{ display: "inline-block", marginTop: 16 }}>
-                  Explore this category
-                </Link>
+                <h3>{lightbox.title}</h3>
+                <p className="lightbox-desc">{lightbox.summary}</p>
+                <div className="lightbox-actions">
+                  <Link href={`/gallery/${lightbox.category}`} className="btn btn-primary" onClick={() => setLightbox(null)}>
+                    Filter by {categoryLabel(lightbox.category)}
+                  </Link>
+                </div>
               </div>
             </div>
           ) : null}

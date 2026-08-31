@@ -5,7 +5,7 @@ import { site } from "@/lib/site-data";
 export default function SiteFooter() {
   return (
     <footer className="site-footer">
-      <div className="container footer-grid">
+      <div className="doc-container footer-grid">
         <div>
           <Link className="brand brand--footer" href="/">
             <span className="brand-mark brand-mark--image" aria-hidden="true">
@@ -43,7 +43,7 @@ export default function SiteFooter() {
           <Link href="/our-work/agriculture">Agriculture</Link>
           <Link href="/our-work/social-welfare">Social Welfare</Link>
           <Link href="/our-work/economic-empowerment">Economic Empowerment</Link>
-          <Link href="/#join">Contact & Donate</Link>
+          <Link href="/contact">Contact & Inquiries</Link>
         </div>
 
         <div>
