@@ -1,0 +1,163 @@
+media:
+  - name: uploads
+    input: public/uploads
+    output: /uploads
+  - name: editorial
+    input: public/editorial
+    output: /editorial
+
+content:
+  - name: impact-stories
+    label: Impact Stories
+    type: collection
+    path: content/impact-stories
+    format: yaml-frontmatter
+    view:
+      fields: [title, category, publishedDate, status]
+      primary: title
+      sort:
+        field: publishedDate
+        order: desc
+    fields:
+      - name: title
+        label: Story Title
+        type: string
+        required: true
+        description: "Use a human, emotional, story-led title."
+
+      - name: slug
+        label: URL Slug
+        type: string
+        required: true
+        description: "SEO-friendly URL identifier, e.g. farmer-transformation-dwangwa"
+
+      - name: excerpt
+        label: Excerpt / Hook
+        type: string
+        description: "One or two sentences summarizing the story for cards & SEO."
+
+      - name: featuredImage
+        label: Featured Image
+        type: image
+        options:
+          media: uploads
+
+      - name: imageAlt
+        label: Image Alt Text
+        type: string
+        description: "Describe what is seen in the image for accessibility and SEO."
+
+      - name: galleryImages
+        label: Gallery Images
+        type: list
+        fields:
+          - name: src
+            label: Image
+            type: image
+            options:
+              media: uploads
+          - name: alt
+            label: Alt Text
+            type: string
+
+      - name: category
+        label: Category
+        type: select
+        options:
+          - Agriculture
+          - Education
+          - Islamic Center with Boarding Facilities
+          - Women’s Empowerment
+          - Livestock
+          - Community Leadership
+        required: true
+
+      - name: relatedProgram
+        label: Related Program
+        type: select
+        options:
+          - agriculture
+          - education
+          - orphan-care
+          - womens-empowerment
+          - livestock
+          - community-welfare
+
+      - name: location
+        label: Location
+        type: string
+        default: "Central Region, Malawi"
+
+      - name: beneficiaryName
+        label: Beneficiary / Focus Group
+        type: string
+        description: "e.g. Children in residential boarding care, Smallholder farmers"
+
+      - name: impactMetrics
+        label: Impact Metrics
+        type: list
+        fields:
+          - name: label
+            label: Metric Label
+            type: string
+          - name: value
+            label: Value
+            type: string
+
+      - name: beforeSummary
+        label: Before Situation
+        type: string
+        description: "Vulnerability or challenge faced before the intervention."
+
+      - name: afterSummary
+        label: After Outcome
+        type: string
+        description: "The measurable transformation and self-reliance achieved."
+
+      - name: publishedDate
+        label: Published Date
+        type: date
+        required: true
+
+      - name: updatedDate
+        label: Updated Date
+        type: date
+
+      - name: featured
+        label: Featured Story
+        type: boolean
+        default: false
+
+      - name: status
+        label: Publishing Status
+        type: select
+        options:
+          - published
+          - draft
+        default: published
+
+      - name: seoTitle
+        label: SEO Title
+        type: string
+
+      - name: seoDescription
+        label: SEO Description
+        type: string
+
+      - name: openGraphImage
+        label: Social Share Image
+        type: image
+        options:
+          media: uploads
+
+      - name: tags
+        label: Tags
+        type: list
+        field:
+          type: string
+
+      - name: body
+        label: Story Narrative
+        type: rich-text
+        options:
+          media: uploads
