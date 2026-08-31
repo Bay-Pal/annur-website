@@ -8,7 +8,7 @@ import { site } from "@/lib/site-data";
 export const metadata: Metadata = {
   title: "Impact Stories",
   description:
-    "Read documentary-style impact stories from An Nur Charity Foundation’s work in Malawi across education, agriculture, orphan care, and livelihood programs.",
+    "Read documentary-style impact stories from An Nur Charity Foundation’s work in Malawi across education, agriculture, Islamic boarding facilities, and livelihood programs.",
   alternates: {
     canonical: `${site.url}/impact-stories`,
   },

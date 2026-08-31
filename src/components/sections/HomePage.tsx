@@ -11,7 +11,7 @@ const proofStats = [
   { label: "Masjid-Madrassah complexes", value: 15, suffix: "+" },
   { label: "Students enrolled", value: 945, suffix: "+" },
   { label: "Farmers supported", value: 1228, suffix: "+" },
-  { label: "Orphans supported", value: 58, suffix: "" },
+  { label: "Boarding students supported", value: 58, suffix: "" },
   { label: "Management fees", value: 0, suffix: "%" },
 ];
 

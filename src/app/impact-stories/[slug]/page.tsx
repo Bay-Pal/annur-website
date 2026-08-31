@@ -332,7 +332,7 @@ export default async function StoryPage({ params }: StoryParams) {
               <span className="story-bottom-banner__tag">Our Work in Malawi</span>
               <h2>Help more families move from relief to self-reliance.</h2>
               <p>
-                From education and sustainable agriculture to orphan care and clean water,
+                From education and sustainable agriculture to Islamic boarding facilities and clean water,
                 100% of your donation directly powers community transformation.
               </p>
               <div className="story-bottom-banner__actions">

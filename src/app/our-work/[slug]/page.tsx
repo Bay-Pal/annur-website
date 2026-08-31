@@ -38,7 +38,7 @@ export default async function ProgramPage({ params }: { params: Promise<{ slug: 
     if (story.relatedProgram === slug) return true;
     if (slug === "agriculture" && (story.category.toLowerCase().includes("agri") || story.tags.some(t => t.toLowerCase().includes("agri")))) return true;
     if (slug === "education" && (story.category.toLowerCase().includes("educ") || story.tags.some(t => t.toLowerCase().includes("school") || t.toLowerCase().includes("madrassa")))) return true;
-    if (slug === "social-welfare" && (story.category.toLowerCase().includes("welfare") || story.category.toLowerCase().includes("orphan") || story.tags.some(t => t.toLowerCase().includes("orphan")))) return true;
+    if (slug === "social-welfare" && (story.category.toLowerCase().includes("welfare") || story.category.toLowerCase().includes("boarding") || story.category.toLowerCase().includes("orphan") || story.tags.some(t => t.toLowerCase().includes("boarding") || t.toLowerCase().includes("orphan")))) return true;
     if (slug === "economic-empowerment" && (story.category.toLowerCase().includes("empower") || story.category.toLowerCase().includes("skills") || story.category.toLowerCase().includes("livestock") || story.tags.some(t => t.toLowerCase().includes("livelihood")))) return true;
     return false;
   });
