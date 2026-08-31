@@ -10,6 +10,7 @@ export type Program = {
   imageAlt: string;
   imagePosition?: string;
   accent: string;
+  cta?: string;
 };
 
 export type Story = {
@@ -123,7 +124,8 @@ export const featuredPrograms = [
     slug: "education",
     title: "Education",
     summary:
-      "Islamic and secular education through madrassahs and schools.",
+      "Islamic and secular learning through Madrassahs, scholarships, feeding support and community education.",
+    cta: "Explore Education",
     icon: "graduation",
     accent: "#2e7fdc",
   },
@@ -131,7 +133,8 @@ export const featuredPrograms = [
     slug: "social-welfare",
     title: "Social Welfare",
     summary:
-      "Orphan care, community support, and social well-being.",
+      "Dignified care and targeted support for vulnerable children, families and communities.",
+    cta: "Explore Social Welfare",
     icon: "heart",
     accent: "#3e9c64",
   },
@@ -139,7 +142,8 @@ export const featuredPrograms = [
     slug: "economic-empowerment",
     title: "Economic Empowerment",
     summary:
-      "Skills training, vocational programs, and entrepreneurship support.",
+      "Skills, productive assets and livelihood pathways that help families build sustainable income.",
+    cta: "Explore Economic Empowerment",
     icon: "spark",
     accent: "#8f63d5",
   },
@@ -147,7 +151,8 @@ export const featuredPrograms = [
     slug: "agriculture",
     title: "Agricultural Development",
     summary:
-      "Sustainable farming, training, and food security initiatives.",
+      "Practical farming systems that strengthen food security, productivity and long-term household resilience.",
+    cta: "Explore Agriculture",
     icon: "leaf",
     accent: "#3e9c64",
   },
@@ -156,63 +161,75 @@ export const featuredPrograms = [
 export const programs: Program[] = [
   {
     slug: "education",
-    title: "Education & Madrassah Support",
-    category: "Knowledge",
+    title: "Education",
+    category: "Education",
     summary:
-      "We strengthen madrassahs, support learning environments, and connect students to opportunities that lift households long-term.",
+      "Islamic and secular learning through Madrassahs, scholarships, feeding support and community education.",
     details:
-      "Education is the foundation of resilience. The program strengthens masjid-madrassah complexes, improves learning conditions, and creates a bridge between religious education, school access, and future livelihood options.",
+      "Education is the foundation of resilience. Through the Masjid-Madrassah Network, feeding support and scholarship pathways, An Nur strengthens learning environments so that every child has access to both Islamic and secular knowledge — and a clearer route toward opportunity.",
     outcomes: [
       "945+ students enrolled",
-      "Madrassah development",
-      "Scholarship pathways",
+      "15+ Masjid-Madrassah complexes supported",
+      "Scholarship pathways established",
     ],
     metrics: [
       { label: "Students reached", value: "945+" },
       { label: "Institutions supported", value: "15+" },
-      { label: "Growth focus", value: "Literacy and faith" },
+      { label: "Programme areas", value: "3" },
     ],
     highlights: [
-      "Teacher and imam collaboration",
-      "Support for books, materials, and classrooms",
-      "Scholarship-ready support structure",
+      "Masjid-Madrassah Network",
+      "Madrassa Support & Feeding",
+      "Scholarships & Knowledge Transfer",
     ],
     imageAlt: "Children and teachers in a madrassah learning environment",
     imagePosition: "center",
     accent: "#2e7fdc",
+    cta: "Explore Education",
   },
   {
     slug: "agriculture",
-    title: "Sustainable Agriculture",
-    category: "Food systems",
+    title: "Agricultural Development",
+    category: "Agricultural Development",
     summary:
-      "From soil to market, we invest in farming systems that improve food security and turn land into a source of dignity.",
+      "Practical farming systems that strengthen food security, productivity and long-term household resilience.",
     details:
-      "Agriculture is treated as a platform for independence, not only survival. The program helps families improve productivity, diversify crops, and move toward a reliable food and income base.",
-    outcomes: ["1,228+ farmers supported", "Seasonal resilience", "Community food security"],
+      "Agriculture is treated as a platform for independence, not only survival. Through Sustainable Agriculture, Farm Field Schools, Demonstration Plots, intercropping techniques, compost and soil health training, and Agricultural Extension Training, An Nur helps families improve productivity, diversify crops, and move toward a reliable food and income base.",
+    outcomes: [
+      "1,228+ farmers supported",
+      "Seasonal resilience improved",
+      "Community food security strengthened",
+    ],
     metrics: [
       { label: "Farmers supported", value: "1,228+" },
-      { label: "Model shift", value: "Sustainable" },
+      { label: "Approach", value: "Field-based" },
       { label: "Outcome", value: "Income stability" },
     ],
     highlights: [
-      "Practical field training",
-      "Market-aware planning",
-      "Long-term household resilience",
+      "Sustainable Agriculture",
+      "Farm Field Schools",
+      "Demonstration Plots & Intercropping",
+      "Compost & Soil Health",
+      "Agricultural Extension Training",
     ],
     imageAlt: "A farmer working in a green agricultural field",
     imagePosition: "center right",
     accent: "#3e9c64",
+    cta: "Explore Agriculture",
   },
   {
     slug: "livestock",
-    title: "Livestock Rotation Program",
-    category: "Assets",
+    title: "Livestock Rotation Programme",
+    category: "Economic Empowerment",
     summary:
-      "Livestock is deployed as a rotating asset that spreads value, grows household assets, and creates a community cycle of benefit.",
+      "A rotating asset model — sometimes called the Walking Bank — that circulates productive livestock through households to build shared community wealth.",
     details:
-      "The livestock initiative is designed to move households from dependence to a growing asset base. It creates a practical and transparent rotation model that keeps value circulating inside the community.",
-    outcomes: ["Rotating asset model", "Household productivity", "Shared community benefit"],
+      "The Livestock Rotation Programme (Walking Bank) moves households from dependence to a growing asset base. Livestock is deployed as a rotating community resource: each participating household receives animals, benefits from their productivity, and passes the asset forward — keeping value circulating inside the community with transparency and accountability.",
+    outcomes: [
+      "Rotating asset model active",
+      "Household productivity increased",
+      "Shared community benefit created",
+    ],
     metrics: [
       { label: "Model", value: "Rotation" },
       { label: "Focus", value: "Asset building" },
@@ -226,62 +243,77 @@ export const programs: Program[] = [
     imageAlt: "A farmer in a field representing livestock and agricultural assets",
     imagePosition: "center",
     accent: "#d7a84a",
+    cta: "Explore Livestock Programme",
   },
   {
     slug: "social-welfare",
     title: "Social Welfare",
-    category: "Care systems",
+    category: "Social Welfare",
     summary:
-      "Social welfare surrounds families with dignified support, orphan care, emergency response, and community-based protection.",
+      "Dignified care and targeted support for vulnerable children, families and communities.",
     details:
-      "The social welfare pillar protects dignity while families move toward longer-term resilience. It connects orphan care, urgent community needs, local trust, and transparent support into one humane response system.",
-    outcomes: ["58 orphans supported", "Community care", "Dignified response"],
+      "Social welfare is the humane safety net that surrounds families as they move toward longer-term resilience. It connects residential orphan care, community mapping, targeted Zakaat distribution, and urgent family support into one accountable, faith-rooted response system.",
+    outcomes: [
+      "58 orphans supported",
+      "Community mapping conducted",
+      "Targeted Zakaat distributed",
+    ],
     metrics: [
       { label: "Children supported", value: "58" },
       { label: "Approach", value: "Dignified" },
       { label: "Focus", value: "Protection" },
     ],
     highlights: [
-      "Orphan care and child protection",
-      "Community welfare response",
-      "Faith-rooted compassion with accountability",
+      "Residential Orphan Care",
+      "Community Mapping",
+      "Targeted Zakaat & Family Support",
     ],
     imageAlt: "A family and child in a caring community environment",
     imagePosition: "center",
     accent: "#3e9c64",
+    cta: "Explore Social Welfare",
   },
   {
     slug: "economic-empowerment",
     title: "Economic Empowerment",
-    category: "Livelihoods",
+    category: "Economic Empowerment",
     summary:
-      "Skills, training, assets, and income pathways help families move from short-term relief toward household agency.",
+      "Skills, productive assets and livelihood pathways that help families build sustainable income.",
     details:
-      "Economic empowerment is where the An Nur model turns support into motion. The program connects training, women-led opportunity, asset thinking, and practical livelihood pathways so families can build confidence and earning power.",
-    outcomes: ["Skills training", "Income pathways", "Asset thinking"],
+      "Economic Empowerment is where the An Nur model turns support into lasting motion. The programme connects skills training, women-led opportunity, tailoring and vocational development, and practical livelihood pathways so families can build confidence and earning power.",
+    outcomes: [
+      "Vocational skills delivered",
+      "Women-led income pathways created",
+      "Household agency strengthened",
+    ],
     metrics: [
       { label: "Focus", value: "Livelihoods" },
       { label: "Model", value: "Skills + assets" },
       { label: "Outcome", value: "Agency" },
     ],
     highlights: [
-      "Vocational and skills development",
-      "Women-led livelihood pathways",
-      "Practical routes from training to income",
+      "Women's Empowerment",
+      "Tailoring & Vocational Skills",
+      "Livestock Rotation / Walking Bank",
     ],
     imageAlt: "Community members taking part in skills training",
     imagePosition: "center",
     accent: "#8f63d5",
+    cta: "Explore Economic Empowerment",
   },
   {
     slug: "womens-empowerment",
     title: "Women's Empowerment",
-    category: "Economic dignity",
+    category: "Economic Empowerment",
     summary:
-      "Women-led training, skills development, and income pathways help strengthen families and broaden community resilience.",
+      "Women-led training, skills development, and income pathways that strengthen families and broaden community resilience.",
     details:
-      "This program creates practical routes to earning, leadership, and self-confidence while respecting local culture and strengthening family systems.",
-    outcomes: ["Skills training", "Income pathways", "Family stability"],
+      "This programme creates practical routes to earning, leadership, and self-confidence while respecting local culture and strengthening family systems. It is a core part of An Nur's Economic Empowerment work and a direct contributor to household stability.",
+    outcomes: [
+      "Skills training delivered",
+      "Income pathways created",
+      "Family stability improved",
+    ],
     metrics: [
       { label: "Focus", value: "Women-led" },
       { label: "Outcome", value: "Confidence" },
@@ -295,16 +327,21 @@ export const programs: Program[] = [
     imageAlt: "Women participating in a community empowerment initiative",
     imagePosition: "center",
     accent: "#8f63d5",
+    cta: "Explore Women's Empowerment",
   },
   {
     slug: "scholarships",
-    title: "Strategic Scholarships",
-    category: "Opportunity",
+    title: "Scholarships & Knowledge Transfer",
+    category: "Education",
     summary:
-      "Scholarships are targeted toward students with clear potential and genuine need, turning promise into a pathway.",
+      "Targeted scholarships for students with clear potential and genuine need, turning promise into a pathway.",
     details:
-      "The scholarship model is strategic rather than generic. It identifies students with strong potential and aligns support with transparent selection and measurable progress.",
-    outcomes: ["Targeted support", "Future leaders", "Clear accountability"],
+      "The scholarship model is strategic rather than generic. It identifies students with strong potential, aligns support with transparent selection, and tracks measurable progress — creating a future leadership pipeline for communities.",
+    outcomes: [
+      "Targeted support provided",
+      "Future leaders identified",
+      "Clear accountability maintained",
+    ],
     metrics: [
       { label: "Focus", value: "Merit + need" },
       { label: "Outcome", value: "Access" },
@@ -317,16 +354,21 @@ export const programs: Program[] = [
     ],
     imageAlt: "A student holding books at a learning center",
     accent: "#2e7fdc",
+    cta: "Explore Scholarships",
   },
   {
     slug: "orphan-care",
     title: "Orphan Care",
-    category: "Protection",
+    category: "Social Welfare",
     summary:
-      "We create a safe and stable support structure for children whose lives should not be defined by loss.",
+      "A safe, stable and dignified support structure for children whose lives should not be defined by loss.",
     details:
-      "Orphan care sits at the center of the organization's social welfare response, combining practical support with a humane, family-aware, and faith-based care model.",
-    outcomes: ["58 orphans supported", "Residential care", "Dignified support"],
+      "Orphan care sits at the centre of An Nur's social welfare response, combining practical residential support with a humane, family-aware, and faith-based care model. It is a core part of the Social Welfare programme.",
+    outcomes: [
+      "58 orphans supported",
+      "Residential care provided",
+      "Dignified, stable support",
+    ],
     metrics: [
       { label: "Children supported", value: "58" },
       { label: "Care focus", value: "Safety" },
@@ -340,16 +382,21 @@ export const programs: Program[] = [
     imageAlt: "A mother and child in a community care setting",
     imagePosition: "center",
     accent: "#3e9c64",
+    cta: "Explore Orphan Care",
   },
   {
     slug: "community-welfare",
     title: "Community Welfare",
-    category: "Social care",
+    category: "Social Welfare",
     summary:
-      "When urgent needs appear, the welfare program responds with structured compassion and local accountability.",
+      "When urgent needs arise, the welfare programme responds with structured compassion and local accountability.",
     details:
-      "Community welfare provides the human safety net around the core programs. It handles immediate needs while still aligning with the longer arc of self-sufficiency.",
-    outcomes: ["Emergency response", "Local support", "Community trust"],
+      "Community welfare provides the human safety net around the core programmes. It handles immediate family needs — including Zakaat distribution and emergency response — while remaining aligned with the longer arc of self-sufficiency.",
+    outcomes: [
+      "Emergency needs met",
+      "Local trust maintained",
+      "Targeted Zakaat distributed",
+    ],
     metrics: [
       { label: "Approach", value: "Relational" },
       { label: "Response", value: "Practical" },
@@ -357,11 +404,12 @@ export const programs: Program[] = [
     ],
     highlights: [
       "Rapid local response",
-      "Dignified support pathways",
+      "Targeted Zakaat & Family Support",
       "Transparent assistance",
     ],
     imageAlt: "A community gathering showing local welfare support",
     accent: "#d7a84a",
+    cta: "Explore Community Welfare",
   },
 ];
 

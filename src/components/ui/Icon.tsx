@@ -11,13 +11,24 @@ type IconName =
   | "spark"
   | "search";
 
-export default function Icon({ name }: { name: IconName }) {
+export default function Icon({
+  name,
+  size = 24,
+  className,
+}: {
+  name: IconName;
+  size?: number;
+  className?: string;
+}) {
   const common = {
+    width: size,
+    height: size,
     fill: "none",
     stroke: "currentColor",
     strokeWidth: 1.8,
     strokeLinecap: "round" as const,
     strokeLinejoin: "round" as const,
+    className,
   };
 
   switch (name) {

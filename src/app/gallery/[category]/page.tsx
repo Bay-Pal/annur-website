@@ -9,9 +9,7 @@ import {
 } from "@/lib/site-data";
 
 export function generateStaticParams() {
-  return galleryCategories
-    .filter((category) => category.slug !== "all")
-    .map((category) => ({ category: category.slug }));
+  return galleryCategories.map((category) => ({ category: category.slug }));
 }
 
 export async function generateMetadata({ params }: { params: Promise<{ category: string }> }) {
