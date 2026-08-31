@@ -153,28 +153,39 @@ export function parseImpactStoryFile(fileName: string): ImpactStory {
   const frontmatter = parseFrontmatter(match[1]);
   const slug = asString(frontmatter.slug, fileName.replace(/\.mdx?$/, ""));
 
+  const category = asString(frontmatter.category, "Social Welfare");
+  const relatedProgram = asString(
+    frontmatter.relatedProgram,
+    category.toLowerCase().includes("agri") ? "agriculture" :
+    category.toLowerCase().includes("educ") ? "education" :
+    category.toLowerCase().includes("board") || category.toLowerCase().includes("orphan") ? "orphan-care" :
+    category.toLowerCase().includes("live") ? "livestock" :
+    category.toLowerCase().includes("water") ? "boreholes-water" :
+    category.toLowerCase().includes("women") ? "economic-empowerment" : "community-welfare"
+  );
+
   return {
-    title: asString(frontmatter.title),
+    title: asString(frontmatter.title, "Untitled Story"),
     slug,
     excerpt: asString(frontmatter.excerpt),
     body: match[2].trim(),
     featuredImage: asString(frontmatter.featuredImage, "/editorial/farmer-hero.png"),
-    imageAlt: asString(frontmatter.imageAlt, "An Nur impact story image"),
+    imageAlt: asString(frontmatter.imageAlt, asString(frontmatter.title, "An Nur impact story")),
     galleryImages: asImageArray(frontmatter.galleryImages),
-    category: asString(frontmatter.category, "Impact Story"),
-    relatedProgram: asString(frontmatter.relatedProgram, "community-welfare"),
-    location: asString(frontmatter.location, "Malawi"),
-    beneficiaryName: asString(frontmatter.beneficiaryName, "Community member"),
+    category,
+    relatedProgram,
+    location: asString(frontmatter.location, "Central Region, Malawi"),
+    beneficiaryName: asString(frontmatter.beneficiaryName, "Community Members"),
     impactMetrics: asMetricArray(frontmatter.impactMetrics),
     beforeSummary: asString(frontmatter.beforeSummary),
     afterSummary: asString(frontmatter.afterSummary),
-    publishedDate: asString(frontmatter.publishedDate),
+    publishedDate: asString(frontmatter.publishedDate, new Date().toISOString().slice(0, 10)),
     updatedDate: asString(frontmatter.updatedDate),
     featured: asBoolean(frontmatter.featured),
-    status: asString(frontmatter.status, "draft") === "published" ? "published" : "draft",
+    status: asString(frontmatter.status, "published") === "draft" ? "draft" : "published",
     seoTitle: asString(frontmatter.seoTitle, asString(frontmatter.title)),
     seoDescription: asString(frontmatter.seoDescription, asString(frontmatter.excerpt)),
-    openGraphImage: asString(frontmatter.openGraphImage, asString(frontmatter.featuredImage)),
+    openGraphImage: asString(frontmatter.openGraphImage, asString(frontmatter.featuredImage, "/editorial/farmer-hero.png")),
     tags: asStringArray(frontmatter.tags),
   };
 }
