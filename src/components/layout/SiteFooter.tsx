@@ -6,7 +6,7 @@ export default function SiteFooter() {
   return (
     <footer className="site-footer">
       <div className="doc-container footer-grid">
-        <div>
+        <div className="footer-brand-col">
           <Link className="brand brand--footer" href="/">
             <span className="brand-mark brand-mark--image" aria-hidden="true">
               <Image
@@ -23,34 +23,49 @@ export default function SiteFooter() {
             </span>
           </Link>
           <p className="footer-copy">
-            {site.description} The platform is designed to be premium, transparent, and
-            ready for long-term growth.
+            {site.description}
           </p>
         </div>
 
-        <div>
+        <div className="footer-col">
           <h3>Explore</h3>
-          <Link href="/about">About Us</Link>
-          <Link href="/about#vision-mission">Vision & Mission</Link>
-          <Link href="/about#madinah-model">The Madinah Model</Link>
-          <Link href="/impact-stories">Impact Stories</Link>
-          <Link href="/gallery/all">Photo Gallery</Link>
+          <ul className="footer-links">
+            <li><Link href="/about">About Us</Link></li>
+            <li><Link href="/about#vision-mission">Vision &amp; Mission</Link></li>
+            <li><Link href="/about#madinah-model">The Madinah Model</Link></li>
+            <li><Link href="/impact-stories">Impact Stories</Link></li>
+            <li><Link href="/gallery/all">Photo Gallery</Link></li>
+          </ul>
         </div>
 
-        <div>
+        <div className="footer-col">
           <h3>Our Work</h3>
-          <Link href="/our-work/education">Education</Link>
-          <Link href="/our-work/agriculture">Agriculture</Link>
-          <Link href="/our-work/social-welfare">Social Welfare</Link>
-          <Link href="/our-work/economic-empowerment">Economic Empowerment</Link>
-          <Link href="/contact">Contact & Inquiries</Link>
+          <ul className="footer-links">
+            <li><Link href="/our-work/education">Education</Link></li>
+            <li><Link href="/our-work/agriculture">Agricultural Development</Link></li>
+            <li><Link href="/our-work/orphan-care">Islamic Center &amp; Boarding</Link></li>
+            <li><Link href="/our-work/social-welfare">Social Welfare</Link></li>
+            <li><Link href="/our-work/economic-empowerment">Economic Empowerment</Link></li>
+          </ul>
         </div>
 
-        <div>
-          <h3>Trust</h3>
-          <p>Registered non-profit</p>
-          <p>Government recognized in Malawi</p>
-          <p>0% management fees</p>
+        <div className="footer-col">
+          <h3>Trust &amp; Governance</h3>
+          <ul className="footer-trust-list">
+            <li><span>✓</span> Registered Non-Profit</li>
+            <li><span>✓</span> Government Recognized</li>
+            <li><span>✓</span> CONGOMA Member</li>
+            <li><span>✓</span> 0% Management Fees</li>
+          </ul>
+        </div>
+      </div>
+
+      <div className="doc-container footer-sub">
+        <p>© {new Date().getFullYear()} An Nur Charity Foundation. All rights reserved.</p>
+        <div className="footer-sub-links">
+          <Link href="/contact">Contact &amp; Inquiries</Link>
+          <span aria-hidden="true">&bull;</span>
+          <Link href="/about">Strategic Vision 2050</Link>
         </div>
       </div>
     </footer>
