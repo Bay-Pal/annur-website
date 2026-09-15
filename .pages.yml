@@ -8,6 +8,7 @@ content:
     label: Impact Stories
     type: collection
     path: content/impact-stories
+    filename: "{fields.slug}.md"
     format: yaml-frontmatter
     view:
       fields: [title, category, publishedDate, status]
