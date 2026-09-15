@@ -32,12 +32,13 @@ content:
         required: true
         options:
           values:
-            - Education & Scholarships
-            - Sustainable Agriculture
+            - Agricultural Development
+            - Education
+            - Livestock Rotation Programme
+            - Social Welfare
+            - Economic Empowerment
+            - Women's Empowerment
             - Islamic Center with Boarding Facilities
-            - Livestock & Agriculture
-            - Clean Water & Boreholes
-            - Economic & Women's Empowerment
             - Community Welfare
 
       - name: excerpt
