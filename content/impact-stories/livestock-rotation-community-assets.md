@@ -6,6 +6,7 @@ excerpt: Livestock support becomes more powerful when assets rotate, multiply
   benefit, and keep dignity inside the community.
 featuredImage: /uploads/WhatsApp Image 2026-09-17 at 10.04.50 AM.jpeg
 galleryImages:
+  - /uploads/WhatsApp Image 2026-09-17 at 4.04.53 PM.jpeg
   - /uploads/WhatsApp Image 2026-09-17 at 10.04.50 AM (1).jpeg
   - /uploads/WhatsApp Image 2026-09-17 at 10.04.49 AM.jpeg
   - /uploads/WhatsApp Image 2026-09-17 at 10.04.49 AM (1).jpeg
