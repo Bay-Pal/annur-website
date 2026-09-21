@@ -10,6 +10,8 @@ galleryImages:
   - /uploads/WhatsApp Image 2026-09-17 at 4.11.29 PM.jpeg
   - /uploads/WhatsApp Image 2026-09-17 at 4.10.41 PM.jpeg
   - /uploads/WhatsApp Image 2026-09-17 at 4.10.17 PM.jpeg
+  - /uploads/WhatsApp Image 2026-09-21 at 4.27.33 PM (2).jpeg
+  - /uploads/WhatsApp Image 2026-09-21 at 4.27.33 PM (1).jpeg
 publishedDate: 2026-04-28
 status: published
 featured: true
