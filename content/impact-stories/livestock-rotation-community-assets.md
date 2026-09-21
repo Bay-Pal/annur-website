@@ -12,7 +12,7 @@ galleryImages:
   - /uploads/WhatsApp Image 2026-09-17 at 10.04.49 AM (1).jpeg
 publishedDate: 2026-04-12
 status: published
-featured: true
+featured: false
 ---
 Some support is consumed once. Some support keeps moving.
 
