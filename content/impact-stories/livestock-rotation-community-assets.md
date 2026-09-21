@@ -10,9 +10,9 @@ galleryImages:
   - /uploads/WhatsApp Image 2026-09-17 at 10.04.50 AM (1).jpeg
   - /uploads/WhatsApp Image 2026-09-17 at 10.04.49 AM.jpeg
   - /uploads/WhatsApp Image 2026-09-17 at 10.04.49 AM (1).jpeg
-publishedDate: 2026-04-12
+publishedDate: 2026-06-12
 status: published
-featured: false
+featured: true
 ---
 Some support is consumed once. Some support keeps moving.
 
