@@ -11,7 +11,7 @@ galleryImages:
   - /uploads/WhatsApp Image 2026-09-21 at 5.25.53 PM.jpeg
 publishedDate: 2026-05-10
 status: published
-featured: true
+featured: false
 ---
 Some forms of charity are measured in what is delivered. Comprehensive boarding care must be measured in something deeper: whether a child feels safe enough to grow.
 
